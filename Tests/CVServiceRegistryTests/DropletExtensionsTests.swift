@@ -28,23 +28,8 @@ extension Droplet {
 class DropletExtensionsTests: XCTestCase {
     
     static var allTests = [
-        ("testRegisterServiceWithParams", testRegisterServiceWithParams),
         ("testRegisterServiceFromConfig", testRegisterServiceFromConfig),
     ]
-    
-    func testRegisterServiceWithParams() {
-        do {
-            let drop = try Droplet.testable()
-            
-            let registerError = drop.registerServiceWith(name: "TestService")
-            XCTAssertNil(registerError)
-            
-            let deregisterError = drop.deregisterServiceWith(id: "TestService")
-            XCTAssertNil(deregisterError)
-        } catch {
-            XCTFail("Failed droplet registration")
-        }
-    }
     
     func testRegisterServiceFromConfig() {
         do {
