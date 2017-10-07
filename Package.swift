@@ -9,7 +9,7 @@ let package = Package(
         .library(name: "CVServiceRegistry", targets: ["CVServiceRegistry"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/cpageler93/ConsulSwift.git", from: "0.2.0"),
+        .package(url: "https://github.com/cpageler93/ConsulSwift.git", .branch("feature/linux")),
         .package(url: "https://github.com/vapor/vapor.git", from: "2.2.2")
     ],
     targets: [

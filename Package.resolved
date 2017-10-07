@@ -20,15 +20,6 @@
         }
       },
       {
-        "package": "CCurl",
-        "repositoryURL": "https://github.com/IBM-Swift/CCurl.git",
-        "state": {
-          "branch": null,
-          "revision": "f481bd86e58787824cc1c1ec1786e03b67831f38",
-          "version": "0.4.1"
-        }
-      },
-      {
         "package": "CTLS",
         "repositoryURL": "https://github.com/vapor/ctls.git",
         "state": {
@@ -50,9 +41,9 @@
         "package": "ConsulSwift",
         "repositoryURL": "https://github.com/cpageler93/ConsulSwift.git",
         "state": {
-          "branch": null,
-          "revision": "c713bce349bd8a83c73cb27cd85c9faf3aa75771",
-          "version": "0.2.0"
+          "branch": "feature/linux",
+          "revision": "5ecea90d8f0e5dd02960a33b73467fe228120276",
+          "version": null
         }
       },
       {
@@ -96,26 +87,8 @@
         "repositoryURL": "https://github.com/vapor/json.git",
         "state": {
           "branch": null,
-          "revision": "5c2a62771cefdb04b1f96f4ccc52b581fe20cfb1",
-          "version": "2.2.0"
-        }
-      },
-      {
-        "package": "Kitura-net",
-        "repositoryURL": "https://github.com/IBM-Swift/Kitura-net.git",
-        "state": {
-          "branch": null,
-          "revision": "5b1b9b2463633f43f0e9fcee74c8360d6feb8d81",
-          "version": "1.7.16"
-        }
-      },
-      {
-        "package": "LoggerAPI",
-        "repositoryURL": "https://github.com/IBM-Swift/LoggerAPI.git",
-        "state": {
-          "branch": null,
-          "revision": "6b62fe66da9b8794d6581e5c341710eea3173cd4",
-          "version": "1.7.1"
+          "revision": "735800d8f2e75ebe3be25559eb6a781f4666dcfc",
+          "version": "2.2.1"
         }
       },
       {
@@ -140,9 +113,9 @@
         "package": "Quack",
         "repositoryURL": "https://github.com/cpageler93/Quack.git",
         "state": {
-          "branch": null,
-          "revision": "a6783ca472096aa7af087ff67a4fc1cbd11771b2",
-          "version": "1.0.0"
+          "branch": "feature/linux",
+          "revision": "481667045b0f174cb29821afa66125722dd6f427",
+          "version": null
         }
       },
       {
@@ -159,26 +132,8 @@
         "repositoryURL": "https://github.com/vapor/routing.git",
         "state": {
           "branch": null,
-          "revision": "66750975f5e5abaacf4bfa4d37ec85dd20c89312",
-          "version": "2.1.0"
-        }
-      },
-      {
-        "package": "SSLService",
-        "repositoryURL": "https://github.com/IBM-Swift/BlueSSLService.git",
-        "state": {
-          "branch": null,
-          "revision": "b4cac06a7860b7016ee968563812e9af3afe28e3",
-          "version": "0.12.57"
-        }
-      },
-      {
-        "package": "Socket",
-        "repositoryURL": "https://github.com/IBM-Swift/BlueSocket.git",
-        "state": {
-          "branch": null,
-          "revision": "d7d26f12e9614679423d4f7731de43597ae1e872",
-          "version": "0.12.70"
+          "revision": "cb9d78aca2540c1a6b45b0ab43e5b0c50f29d216",
+          "version": "2.2.0"
         }
       },
       {
