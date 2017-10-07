@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/cpageler93/ConsulSwift.git",
         "state": {
           "branch": null,
-          "revision": "eeadbe0d3aafdbb5ca1f1f408f8d788d64ab966e",
-          "version": "0.2.1"
+          "revision": "d54768e8c4f6424af5ce1c8fecde396949ece46f",
+          "version": "0.3.1"
         }
       },
       {
@@ -114,8 +114,8 @@
         "repositoryURL": "https://github.com/cpageler93/Quack.git",
         "state": {
           "branch": null,
-          "revision": "481667045b0f174cb29821afa66125722dd6f427",
-          "version": "1.0.1"
+          "revision": "55ad6fcf0e0b993e2c360246ad394f77f679bdc8",
+          "version": "1.0.2"
         }
       },
       {
