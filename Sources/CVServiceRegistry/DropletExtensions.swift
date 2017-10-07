@@ -19,10 +19,14 @@ public extension Droplet {
         let serviceName = try readConfigServiceName()
         let serviceId = config["consul"]?["service"]?["id"]?.string
         let serviceTags = config["consul"]?["service"]?["tags"]?.array?.map{ $0.string }.flatMap { $0 }
+        let host = config["server"]?["host"]?.string
+        let port = config["server"]?["port"]?.string
         
         return CVServiceRegistry.sharedInstance.registerServiceWith(name: serviceName,
                                                                     id: serviceId,
-                                                                    tags: serviceTags)
+                                                                    tags: serviceTags,
+                                                                    host: host,
+                                                                    port: port)
     }
     
     /// Deregisters service in local Consul

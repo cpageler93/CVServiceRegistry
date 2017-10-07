@@ -23,7 +23,7 @@ class CVServiceRegistryTests: XCTestCase {
         
         // register node
         let service = ConsulAgentServiceInput(name: "testNodesForService",
-                                              id: "testNodesForService",
+                                              id: "com.pageler.christoph.test.node",
                                               tags: ["production"],
                                               address: nil,
                                               port: nil)
@@ -47,13 +47,13 @@ class CVServiceRegistryTests: XCTestCase {
             return
         }
         
-        XCTAssertEqual(firstNode.service.id, "testNodesForService")
+        XCTAssertEqual(firstNode.service.id, "com.pageler.christoph.test.node")
         XCTAssertEqual(firstNode.service.tags.count, 1)
         XCTAssertEqual(firstNode.service.tags.first ?? "", "production")
         
         
         // deregister node
-        consul.agentDeregisterService("testNodesForService")
+        consul.agentDeregisterService("com.pageler.christoph.test.node")
     }
     
     func testBaseURLForNodeWithService() {
@@ -61,7 +61,7 @@ class CVServiceRegistryTests: XCTestCase {
         
         // register node
         let service = ConsulAgentServiceInput(name: "testBaseURLForNodeWithService",
-                                              id: "testBaseURLForNodeWithService",
+                                              id: "com.pageler.christoph.test.node.with.service",
                                               tags: ["production", "https"],
                                               address: "123.123.123.123",
                                               port: 1337)
@@ -78,7 +78,7 @@ class CVServiceRegistryTests: XCTestCase {
         XCTAssertEqual(baseURL.absoluteString, "https://123.123.123.123:1337")
         
         // deregister node
-        consul.agentDeregisterService("testBaseURLForNodeWithService")
+        consul.agentDeregisterService("com.pageler.christoph.test.node.with.service")
     }
 
 }

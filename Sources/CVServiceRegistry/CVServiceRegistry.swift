@@ -59,7 +59,9 @@ public class CVServiceRegistry {
     /// - Returns: Error on failure
     public func registerServiceWith(name: String,
                                     id: String? = nil,
-                                    tags: [String]? = nil) -> Error? {
+                                    tags: [String]? = nil,
+                                    host: String? = nil,
+                                    port: String? = nil) -> Error? {
         let service = ConsulAgentServiceInput(name: name,
                                               id: id,
                                               tags: tags ?? [],
@@ -68,7 +70,23 @@ public class CVServiceRegistry {
         let result = consul.agentRegisterService(service)
         
         switch result {
-        case .success: return nil
+        case .success:
+            // register check
+            let checkProtocol = (tags?.contains("https") ?? false) ? "https" : "http"
+            let checkHost = host ?? "0.0.0.0"
+            let checkPort = port ?? "8080"
+            let serviceId = id ?? name
+            let checkId = "\(serviceId).check.vapor.running"
+            let checkInput = ConsulAgentCheckInput(name: "Vapor Running - \(name)", http: "\(checkProtocol)://\(checkHost):\(checkPort)", interval: "10s")
+            checkInput.serviceID = serviceId
+            checkInput.id = checkId
+            let checkResult = consul.agentRegisterCheck(checkInput)
+            
+            switch checkResult {
+            case .success: return nil
+            case .failure(let error): return error
+            }
+            
         case .failure(let error): return error
         }
     }

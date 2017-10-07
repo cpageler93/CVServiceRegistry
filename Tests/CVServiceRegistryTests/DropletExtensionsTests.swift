@@ -41,7 +41,7 @@ class DropletExtensionsTests: XCTestCase {
             try """
             {
                 "service": {
-                    "id": "TestServiceFromConfig",
+                    "id": "com.pageler.christoph.test.from.config",
                     "name": "TestServiceFromConfig",
                     "tags": [
                         "foo",
