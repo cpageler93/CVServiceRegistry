@@ -61,20 +61,27 @@ public class CVServiceRegistry {
                                     id: String? = nil,
                                     tags: [String]? = nil,
                                     host: String? = nil,
-                                    port: String? = nil) -> Error? {
+                                    port portString: String? = nil) -> Error? {
+        // apply default values for address
+        let host = host ?? "0.0.0.0"
+        var port = 8080 // default
+        if let ps = portString, let portStringAsInt = Int(ps) {
+            port = portStringAsInt
+        }
+        
         let service = ConsulAgentServiceInput(name: name,
                                               id: id,
                                               tags: tags ?? [],
-                                              address: nil,
-                                              port: nil)
+                                              address: host,
+                                              port: port)
         let result = consul.agentRegisterService(service)
         
         switch result {
         case .success:
             // register check
             let checkProtocol = (tags?.contains("https") ?? false) ? "https" : "http"
-            let checkHost = host ?? "0.0.0.0"
-            let checkPort = port ?? "8080"
+            let checkHost = host
+            let checkPort = String(port)
             let serviceId = id ?? name
             let checkId = "\(serviceId).check.vapor.running"
             let checkInput = ConsulAgentCheckInput(name: "Vapor Running - \(name)", http: "\(checkProtocol)://\(checkHost):\(checkPort)", interval: "10s")
