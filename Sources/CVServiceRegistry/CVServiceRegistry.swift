@@ -63,10 +63,16 @@ public class CVServiceRegistry {
                                     host: String? = nil,
                                     port portString: String? = nil) -> Error? {
         // apply default values for address
-        let host = host ?? "0.0.0.0"
+        var host = host ?? "127.0.0.1"
         var port = 8080 // default
         if let ps = portString, let portStringAsInt = Int(ps) {
             port = portStringAsInt
+        }
+        
+        // consul cant handle default host 0.0.0.0
+        // service + check should be available on 127.0.0.1
+        if host == "0.0.0.0" {
+            host = "127.0.0.1"
         }
         
         let service = ConsulAgentServiceInput(name: name,
